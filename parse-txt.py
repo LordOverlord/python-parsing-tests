@@ -9,11 +9,12 @@ all_files = os.listdir(txtdir)
 tyear = "Año:"
 ttittle = "Titulo"
 tresolution = "Resolución: "
+exttxt = ".txt"
 filename = "titleyear.{}.csv".format(ts)
 newlist = []
 for file in all_files:
     global ffile 
-    ffile = file
+    ffile = "{}".format(file.removesuffix(exttxt))
     dirfile = "{}{}{}".format(txtdir,'/',file)
     f = open(dirfile, 'r', encoding="utf-8")
     content = f.read()
